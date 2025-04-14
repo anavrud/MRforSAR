@@ -1,3 +1,12 @@
+// Map View Controller for HoloLens
+//
+// Authors: Endre Kalheim, Aleksander Navrud
+// Date: April 2025
+//
+// Controls the map's positioning and appearance in 3D space
+// Uses MRTK's RadialView solver to position map relative to user
+// Manages distance, angle, and movement transitions
+
 using Microsoft.MixedReality.Toolkit.Utilities;
 using Microsoft.MixedReality.Toolkit.Utilities.Solvers;
 using UnityEngine;

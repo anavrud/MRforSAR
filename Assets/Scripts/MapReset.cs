@@ -1,3 +1,12 @@
+// Map Reset Controller for HoloLens
+//
+// Author: Aleksander Navrud 
+// Date: April 2025
+//
+// Manages map reset functionality
+// Returns map to default scale, position and configuration
+// Includes cooldown protection to prevent rapid triggering
+
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;

@@ -1,3 +1,19 @@
+# PC GPS Simulator with Target Location Support
+#
+# Inspired by/Based on: pythonclient.py
+# Original author: jryebread (GitHub)
+# Source: https://gist.github.com/jryebread/2bdf148313f40781f1f36d38ada85d47
+# 
+# Modified by: Aleksander Navrud
+# Date: April 2025
+# Modifications:
+# - Added target location support
+# - Implemented random GPS coordinate generation
+# - Added interactive command interface
+#
+# This script runs on a PC to simulate GPS data
+# It generates random coordinates and serves them to HoloLens clients
+
 import socket
 import threading
 import time
@@ -19,11 +35,12 @@ def generate_random_gps():
     """
     Generate random GPS data within the specified range
     Also includes any target location information
+    Returns values with 4 decimal places precision
     """
     return {
-        "latitude": random.uniform(63.3, 63.5),
-        "longitude": random.uniform(10.3, 10.7),
-        "altitude": random.uniform(0, 100),
+        "latitude": round(random.uniform(63.3, 63.5), 4),
+        "longitude": round(random.uniform(10.3, 10.7), 4),
+        "altitude": round(random.uniform(0, 100), 1),
         "timestamp": int(time.time() * 1000),
         "valid": True,
         # Target location data

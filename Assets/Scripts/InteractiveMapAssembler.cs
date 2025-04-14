@@ -1,3 +1,12 @@
+// Interactive Map Assembler
+//
+// Author: Endre Kalheim
+// Date: April 2025
+//
+// Dynamically builds map from tile resources
+// Handles pan, zoom and interaction behaviors
+// Manages marker following and map recentering
+
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;

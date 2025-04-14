@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4160482491507299756}
   - component: {fileID: 2637160477041978982}
   m_Layer: 5
-  m_Name: CurentMarkerPrefeb
+  m_Name: CurrentMarkerPrefeb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

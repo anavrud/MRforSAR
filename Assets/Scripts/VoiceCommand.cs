@@ -1,3 +1,12 @@
+// Voice Command Handler for Map Interactions
+//
+// Author: Endre Kalheim
+// Date: April 2025
+//
+// Processes voice commands for map control
+// Implements MRTK speech recognition interface
+// Supports map toggle, recenter and reset commands
+
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine;

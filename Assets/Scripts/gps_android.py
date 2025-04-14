@@ -1,8 +1,18 @@
 # Android GPS Server with Target Location Support
 #
+# Inspired by/Based on: pythonclient.py
+# Original author: jryebread (GitHub)
+# Source: https://gist.github.com/jryebread/2bdf148313f40781f1f36d38ada85d47
+# 
+# Modified by: Aleksander Navrud
+# Date: April 2025
+# Modifications:
+# - Added target location support
+# - Implemented Android-specific GPS access
+# - Added interactive command interface
+#
 # This script runs on an Android device with Termux installed
 # It captures real GPS data and serves it to HoloLens clients
-# along with optional target location information
 
 import socket
 import threading

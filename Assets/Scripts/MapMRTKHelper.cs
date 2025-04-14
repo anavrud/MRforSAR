@@ -1,3 +1,12 @@
+// Map MRTK Integration Helper
+//
+// Author: Aleksander Navrud
+// Date: April 2025
+//
+// Integrates map functionality with MRTK input system
+// Handles manipulation events and state changes
+// Provides automatic behavior during user interaction
+
 using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 

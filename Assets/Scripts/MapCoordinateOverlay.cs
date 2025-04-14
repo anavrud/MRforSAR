@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿// Map Coordinate Overlay System
+//
+// Authors: Endre Kalheim, Aleksander Navrud
+// Date: April 2025
+//
+// Handles GPS to Unity position mapping
+// Implements inverse distance weighting interpolation
+// Manages current position and target markers on map
+
+using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
