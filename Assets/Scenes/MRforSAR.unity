@@ -1369,10 +1369,10 @@ MonoBehaviour:
   initialLat: 63.4
   initialLon: 10.4
   targetMarkerPrefab: {fileID: 7689651987103200463, guid: e4e5df1f36bf6d54ca18bc5d21093a41, type: 3}
-  enableTestingControls: 0
+  enableTestingControls: 1
   testTargetLat: 63.402
   testTargetLon: 10.402
-  showTargetOnStart: 0
+  showTargetOnStart: 1
 --- !u!114 &1153595547
 MonoBehaviour:
   m_ObjectHideFlags: 0
