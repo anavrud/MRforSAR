@@ -1366,13 +1366,13 @@ MonoBehaviour:
   kNeighbors: 10
   distancePower: 1
   gpsClient: {fileID: 1928757310}
-  initialLat: 63.4
-  initialLon: 10.4
+  initialLat: 63.41104
+  initialLon: 10.409593
   targetMarkerPrefab: {fileID: 7689651987103200463, guid: e4e5df1f36bf6d54ca18bc5d21093a41, type: 3}
-  enableTestingControls: 1
-  testTargetLat: 63.402
-  testTargetLon: 10.402
-  showTargetOnStart: 1
+  enableTestingControls: 0
+  testTargetLat: 63.413326
+  testTargetLon: 10.413905
+  showTargetOnStart: 0
 --- !u!114 &1153595547
 MonoBehaviour:
   m_ObjectHideFlags: 0
