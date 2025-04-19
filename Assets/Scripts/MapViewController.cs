@@ -1,6 +1,5 @@
 // Map View Controller for HoloLens
 //
-// Authors: Endre Kalheim, Aleksander Navrud
 // Date: April 2025
 //
 // Controls the map's positioning and appearance in 3D space

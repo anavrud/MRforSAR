@@ -1,6 +1,5 @@
 // Map Visibility Toggle for HoloLens
 //
-// Author: Aleksander Navrud
 // Date: April 2025
 //
 // Controls the visibility state of the map interface

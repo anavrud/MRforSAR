@@ -1,6 +1,5 @@
 ﻿// Map Coordinate Overlay System
 //
-// Authors: Endre Kalheim, Aleksander Navrud
 // Date: April 2025
 //
 // Handles GPS to Unity position mapping

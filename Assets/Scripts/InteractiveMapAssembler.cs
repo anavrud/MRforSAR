@@ -1,6 +1,5 @@
 // Interactive Map Assembler
 //
-// Author: Endre Kalheim
 // Date: April 2025
 //
 // Dynamically builds map from tile resources

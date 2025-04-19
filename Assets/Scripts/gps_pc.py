@@ -4,7 +4,6 @@
 # Original author: jryebread (GitHub)
 # Source: https://gist.github.com/jryebread/2bdf148313f40781f1f36d38ada85d47
 # 
-# Modified by: Aleksander Navrud
 # Date: April 2025
 # Modifications:
 # - Added target location support

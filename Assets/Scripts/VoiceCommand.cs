@@ -1,6 +1,5 @@
 // Voice Command Handler for Map Interactions
 //
-// Author: Endre Kalheim
 // Date: April 2025
 //
 // Processes voice commands for map control

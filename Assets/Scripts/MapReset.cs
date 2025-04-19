@@ -1,6 +1,5 @@
 ﻿// Map Reset Controller for HoloLens
 //
-// Author: Aleksander Navrud 
 // Date: April 2025
 //
 // Manages map reset functionality

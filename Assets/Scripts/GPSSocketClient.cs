@@ -3,8 +3,7 @@
 // Inspired by/Based on: server.cs
 // Original author: jryebread (GitHub)
 // Source: https://gist.github.com/jryebread/2bdf148313f40781f1f36d38ada85d47
-//
-// Modified by: Aleksander Navrud
+// 
 // Date: April 2025
 // Modifications:
 // - Adapted for HoloLens environment

@@ -1,6 +1,5 @@
 // Map MRTK Integration Helper
 //
-// Author: Aleksander Navrud
 // Date: April 2025
 //
 // Integrates map functionality with MRTK input system
