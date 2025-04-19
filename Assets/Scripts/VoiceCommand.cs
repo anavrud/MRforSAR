@@ -43,12 +43,12 @@ public class VoiceCommand : MonoBehaviour, IMixedRealitySpeechHandler
     {
         switch (eventData.Command.Keyword.ToLower())
         {
-            case "recenter":
-                Debug.Log("Recenter command recognized");
+            case "center":
+                Debug.Log("Center command recognized");
                 if (interactiveMapAssembler != null)
                     interactiveMapAssembler.RecenterMapButton();
                 else
-                    Debug.LogWarning("Map assembler not found for recenter command");
+                    Debug.LogWarning("Map assembler not found for center command");
                 eventData.Use();
                 break;
 
