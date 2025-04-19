@@ -261,7 +261,7 @@ MonoBehaviour:
   proximityType: 3
   executionOrder: 0
   scaleMinimum: 0.3
-  scaleMaximum: 1.1
+  scaleMaximum: 1.2
   relativeToInitialState: 0
 --- !u!114 &166095646
 MonoBehaviour:
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   mapContent: {fileID: 166095640}
   mapOffset: {x: 0, y: 0}
   panSpeed: 250
-  zoomSpeed: 0.03
+  zoomSpeed: 0.05
   minZoom: 0.5
   maxZoom: 4
   markerRectTransform: {fileID: 0}
@@ -1455,8 +1455,8 @@ MonoBehaviour:
   mapAssembler: {fileID: 1153595547}
   mapViewController: {fileID: 1226831886}
   cooldownDuration: 0.5
-  initialScale: {x: 0.9, y: 0.9, z: 0.9}
-  initialDistance: 1
+  initialScale: {x: 1, y: 1, z: 1}
+  initialDistance: 1.1
 --- !u!1 &1206469016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,13 +1734,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b665fbd43371db49ae5b9a95f13cbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 1
-  maxDistance: 1
+  minDistance: 1.1
+  maxDistance: 1.1
   maxViewDegrees: 10
   positionOffset: {x: 0, y: 0, z: 0}
-  moveLerpTime: 0.3
-  rotateLerpTime: 0.3
-  scaleLerpTime: 0.3
+  moveLerpTime: 0
+  rotateLerpTime: 0
+  scaleLerpTime: 0
 --- !u!1 &1418535262
 GameObject:
   m_ObjectHideFlags: 0

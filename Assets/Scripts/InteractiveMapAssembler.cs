@@ -174,6 +174,13 @@ public class InteractiveMapAssembler : MonoBehaviour
 
     private void Update()
     {
+        // Check for any input before other operations
+        if (Input.GetMouseButtonDown(0) || Input.mouseScrollDelta.y != 0 || Input.touchCount > 0)
+        {
+            // Disable followMarker at the first sign of manual input
+            followMarker = false;
+        }
+
         // Handle both mouse and touch input
         if (Input.touchSupported && Input.touchCount > 0)
         {
@@ -192,7 +199,7 @@ public class InteractiveMapAssembler : MonoBehaviour
             RecenterMap();
         }
     }
-    
+
     // Mouse Input Handlers
     private void HandleMousePanning()
     {
@@ -261,6 +268,8 @@ public class InteractiveMapAssembler : MonoBehaviour
             float touchDeltaMag = (touch0.position - touch1.position).magnitude;
             float deltaMagnitudeDiff = touchDeltaMag - prevTouchDeltaMag;
 
+            deltaMagnitudeDiff *= 0.5f;
+
             float currentScale = mapContent.localScale.x;
             float newScale = Mathf.Clamp(currentScale + deltaMagnitudeDiff * zoomSpeed * Time.deltaTime, minZoom, maxZoom);
 
@@ -315,4 +324,3 @@ public class InteractiveMapAssembler : MonoBehaviour
         RecenterMap();
     }
 }
-
