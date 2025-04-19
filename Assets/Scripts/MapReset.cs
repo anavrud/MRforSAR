@@ -19,72 +19,62 @@ public class MapReset : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float cooldownDuration = 0.5f;
+    [SerializeField] private Vector3 initialScale = new Vector3(1f, 1f, 1f);
     [SerializeField] private float initialDistance = 1.1f;
 
     private bool isCoolingDown = false;
+    private Vector3 initialWorldScale;
 
-    // Captured at Start()
-    private Vector3 originalContentScale;
-    private Vector3 originalCanvasScale;
-    private Vector3 originalPosition;
-    private Quaternion originalRotation;
-
-    // Initialize references and store the map's original scale, position, and rotation
     void Start()
     {
+        // Find components if not assigned
         if (mapAssembler == null)
             mapAssembler = FindObjectOfType<InteractiveMapAssembler>();
 
-        if (mapCanvas == null && mapAssembler?.mapContent != null)
+        if (mapCanvas == null && mapAssembler != null && mapAssembler.mapContent != null)
             mapCanvas = mapAssembler.mapContent.GetComponentInParent<Canvas>();
 
         if (mapViewController == null)
             mapViewController = FindObjectOfType<MapViewController>();
 
-        if (mapAssembler?.mapContent != null)
-            originalContentScale = mapAssembler.mapContent.localScale;
-
+        // Capture the initial world scale of the map canvas
         if (mapCanvas != null)
         {
-            originalCanvasScale = mapCanvas.transform.localScale;
-            originalPosition = mapCanvas.transform.localPosition;
-            originalRotation = mapCanvas.transform.localRotation;
+            initialWorldScale = mapCanvas.transform.localScale;
         }
     }
 
-    // Reset map to its initial transform, scale, and solver distance, then recenter
+    /// Resets the map to its initial state
     public void ResetMap()
     {
+        // Check if we're in cooldown period
         if (isCoolingDown)
         {
             Debug.Log("Reset button on cooldown - ignoring reset request");
             return;
         }
 
+        // Make sure the map is visible first
         if (mapCanvas != null)
+        {
             mapCanvas.gameObject.SetActive(true);
+            // Reset world scale to initial
+            mapCanvas.transform.localScale = initialWorldScale;
+        }
 
-        // Reset solver distance
-        if (mapViewController != null)
-            mapViewController.AdjustDistance(initialDistance);
-
+        // Reset map position and scale
         if (mapAssembler != null)
         {
-            // Restore UI‐content zoom
+            // Reset scale to initial value
             if (mapAssembler.mapContent != null)
-                mapAssembler.mapContent.localScale = originalContentScale;
-
-            // Restore world‐space Canvas scale, pos & rot
-            if (mapCanvas != null)
             {
-                var t = mapCanvas.transform;
-                t.localScale = originalCanvasScale;
-                t.localPosition = originalPosition;
-                t.localRotation = originalRotation;
+                mapAssembler.mapContent.localScale = initialScale;
             }
 
-            // Re‐enable follow & recenter
+            // Enable follow marker to ensure map moves with user
             mapAssembler.followMarker = true;
+
+            // Force map to recenter on marker
             mapAssembler.RecenterMapButton();
 
             Debug.Log("Map has been reset to initial state");
@@ -94,10 +84,17 @@ public class MapReset : MonoBehaviour
             Debug.LogError("Map Assembler not found - cannot reset map!");
         }
 
+        // Reset map view distance using the public method
+        if (mapViewController != null)
+        {
+            mapViewController.AdjustDistance(initialDistance);
+        }
+
+        // Start cooldown
         StartCoroutine(CooldownRoutine());
     }
 
-    // Prevent rapid consecutive resets by enforcing a short cooldown
+    /// Coroutine that handles the cooldown timer
     private IEnumerator CooldownRoutine()
     {
         isCoolingDown = true;

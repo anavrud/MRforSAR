@@ -1455,7 +1455,6 @@ MonoBehaviour:
   mapAssembler: {fileID: 1153595547}
   mapViewController: {fileID: 1226831886}
   cooldownDuration: 0.5
-  initialScale: {x: 1, y: 1, z: 1}
   initialDistance: 1.1
 --- !u!1 &1206469016
 GameObject:
@@ -1738,9 +1737,9 @@ MonoBehaviour:
   maxDistance: 1.1
   maxViewDegrees: 10
   positionOffset: {x: 0, y: 0, z: 0}
-  moveLerpTime: 0
-  rotateLerpTime: 0
-  scaleLerpTime: 0
+  moveLerpTime: 0.1
+  rotateLerpTime: 0.1
+  scaleLerpTime: 0.1
 --- !u!1 &1418535262
 GameObject:
   m_ObjectHideFlags: 0
