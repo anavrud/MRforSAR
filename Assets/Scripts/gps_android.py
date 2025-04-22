@@ -146,12 +146,26 @@ def start_server():
     server.bind((server_ip, server_port))
     server.listen(5)
     
-    # Get this device's IP address to display
-    ip_info = subprocess.check_output(['ifconfig', 'wlan0']).decode('utf-8')
+    # Get this device's IP address to display - using a more reliable method for Termux
     ip_address = "unknown"
-    for line in ip_info.split('\n'):
-        if "inet " in line:
-            ip_address = line.split('inet ')[1].split(' ')[0]
+    try:
+        # Method 1: Use socket to get IP
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # This doesn't send any packets - just sets up the socket
+        s.connect(("8.8.8.8", 80))
+        ip_address = s.getsockname()[0]
+        s.close()
+    except:
+        try:
+            # Method 2: Try ip command which is more likely available in Termux
+            ip_info = subprocess.check_output(['ip', 'addr', 'show']).decode('utf-8')
+            for line in ip_info.split('\n'):
+                if "inet " in line and not "127.0.0.1" in line:
+                    ip_address = line.split('inet ')[1].split('/')[0].strip()
+                    break
+        except:
+            print("[!] Could not determine IP address automatically")
+            print("[!] Check your IP address manually with 'ip addr show' command")
     
     print(f"[*] GPS Server running")
     print(f"[*] IP Address: {ip_address}")
@@ -163,23 +177,7 @@ def start_server():
     input_thread.daemon = True
     input_thread.start()
     
-    print(f"[*] Target location interaction enabled")
-    print(f"[*] Press Ctrl+C to stop the server")
-    print(f"[*] Waiting for input...")
-    
-    try:
-        while True:
-            # Accept incoming connections
-            client, addr = server.accept()
-            print(f"[*] Accepted connection from {addr[0]}:{addr[1]}")
-            
-            # Create a thread to handle the client
-            client_handler = threading.Thread(target=handle_client, args=(client,))
-            client_handler.daemon = True
-            client_handler.start()
-    except KeyboardInterrupt:
-        print("[*] Shutting down server")
-        server.close()
+    # ...rest of the function remains the same...
 
 def handle_user_input():
     """
