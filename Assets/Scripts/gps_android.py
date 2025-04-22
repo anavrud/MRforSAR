@@ -177,7 +177,23 @@ def start_server():
     input_thread.daemon = True
     input_thread.start()
     
-    # ...rest of the function remains the same...
+    print(f"[*] Target location interaction enabled")
+    print(f"[*] Press Ctrl+C to stop the server")
+    print(f"[*] Waiting for connections...")
+    
+    # Add the missing server accept loop
+    try:
+        while True:
+            client, addr = server.accept()
+            print(f"[*] Accepted connection from {addr[0]}:{addr[1]}")
+            
+            # Create a thread to handle the client
+            client_handler = threading.Thread(target=handle_client, args=(client,))
+            client_handler.daemon = True
+            client_handler.start()
+    except KeyboardInterrupt:
+        print("[*] Shutting down server")
+        server.close()
 
 def handle_user_input():
     """
