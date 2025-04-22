@@ -1437,8 +1437,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapCanvas: {fileID: 1226831882}
+  toggleButton: {fileID: 1623070383}
   cooldownDuration: 1
   visibleOnStart: 1
+  allowVoiceCommands: 1
 --- !u!114 &1153595552
 MonoBehaviour:
   m_ObjectHideFlags: 0
