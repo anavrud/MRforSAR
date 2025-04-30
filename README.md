@@ -16,3 +16,8 @@ Our implementation extends the original code with:
 - Device-specific adaptations (Android, PC, HoloLens)
 - Interactive command interface
 - Reconnection logic and error handling
+
+### Unity Plugin for HoloLens 2 Research Mode
+- **Original Source**: [HoloLens2-ResearchMode-Unity](https://github.com/petergu684/HoloLens2-ResearchMode-Unity/tree/master?tab=MIT-1-ov-file) by petergu684
+- **Used For**: Unity Plugin for using research mode functionality in HoloLens 2.
+- **Modifications**: Adapted for our specific needs and integrated into the project.
