@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/3e5eaad2-4373-40d7-a28b-723a7aa53dba
 
 ## Acknowledgments and Credits
 
-This project incorporates code based on or inspired by:
+This project builds on and extends existing open-source work:
 
 ### GPS Data Communication Components
 - **Original Source**: [GPS Socket Implementation](https://gist.github.com/jryebread/2bdf148313f40781f1f36d38ada85d47) by jryebread
