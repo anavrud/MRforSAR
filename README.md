@@ -5,7 +5,7 @@ All map images and coordinate data previously included in this project have been
 
 ## Video Demonstration
 
-https://github.com/user-attachments/assets/3e5eaad2-4373-40d7-a28b-723a7aa53dba
+
 
 
 ## Acknowledgments and Credits
