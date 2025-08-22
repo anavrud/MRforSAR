@@ -1,7 +1,7 @@
 
 ## Important Notice: Map Content Removed
 
-All map images and coordinate data previously included in this project have been deleted due to copyright restrictions from "Norge i bilder" (Statens kartverk, Geovekst, and associated partners). The repository does not contain any copyrighted map data. If you wish to use map content, you must obtain appropriate licenses or use your own open data sources.
+All map images and coordinate data previously included in this project have been removed due to copyright restrictions from "Norge i bilder" (Statens kartverk, Geovekst, and associated partners). The repository does not contain any copyrighted map data. If you wish to use map content, you must obtain appropriate licenses or use your own open data sources.
 
 ## Video Demonstration
 
